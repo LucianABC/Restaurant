@@ -36,18 +36,19 @@ const Catalogo = jsCatalogo.Catalogo;
 /* pero como carajos hago para que los objetos interactuen con el html/mostrarlos en la lista
 o sea crear el objeto y al mismo tiempo el ul? */
 
+const catalog = new Catalogo;
 
 const tableList = document.querySelector("#tableList");
 const addTableNum = document.querySelector("#tableName");
 const addButton = document.querySelector("#addButton");
 const newTable = event => {
-    //const table = new Table;
+    const table = new Table;
     let li = document.createElement("li");
     li.classList.add="table";
 
     let tableNum = document.createElement("span");
-    tableNum.innerHTML= addTableNum.value;
-    //tableNum.innerHTML=table.num;
+    table.num= addTableNum.value;
+    tableNum.innerHTML=table.num;
     li.appendChild(tableNum);
 
     let check = document.createElement("span");

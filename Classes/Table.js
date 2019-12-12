@@ -9,7 +9,7 @@ const Catalogo = jsCatalogo.Catalogo;
 y la cuenta.*/
 
 class Table  {
-    constructor(num,products){
+    constructor(num){
         this.num= num;
         this.check = new Check;
     }
