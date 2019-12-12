@@ -1,4 +1,6 @@
 //lista de productos 
+const jsProducto =require('./Classes/Product.js'); 
+const Product = jsProducto.Product;
 
 class Catalogo {
     constructor(){

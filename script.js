@@ -1,8 +1,11 @@
 const jsProducto =require('./Classes/Product.js'); 
 const jsTable =require('./Classes/Table.js'); 
-
-const Producto = jsProducto.Product;
+const jsCheck =require('./Classes/Check.js'); 
+const jsCatalogo = require('./Classes/Catalogo.js');
+const Check = jsCheck.Check;
+const Product = jsProducto.Product;
 const Table = jsTable.Table;
+const Catalogo = jsCatalogo.Catalogo;
 
 /**
 * Hacer un sistema para restaurant.
