@@ -17,6 +17,7 @@ class Catalogo {
     modifyProduct(name, newPrice){
         name.price=newPrice;
         //si ya lo pushee no se modifica en el array, no?
+        //conviene que el metodo esté aca o en Product?
     }
 }
 
