@@ -1,3 +1,8 @@
+const jsProducto =require('./Classes/Product.js'); 
+const jsTable =require('./Classes/Table.js'); 
+
+const Producto = jsProducto.Product;
+const Table = jsTable.Table;
 
 /**
 * Hacer un sistema para restaurant.
@@ -23,33 +28,6 @@
 * 
 * Por ultimo, puede hacerse con objetos o con clases.
 */
-
-
-/* quiero que cada mesa sea un objeto, que contenga el numero de mesa, la lista de productos
-y la cuenta.*/
-
-class Table  {
-    constructor(num,products=[]){
-        this.num= num;
-        this.products=products;
-    }
-    get check (){
-        let check=0;
-        for (let producto of products){
-            check += producto.price;
-        }
-        return `$${check}`
-    }
-}
-
-/* quiero que cada producto sea un objeto, que contenga el nombre y el precio*/
-class Producto {
-    constructor(nombre, precio) {
-        this.nombre= nombre;
-        this.precio=precio;
-    }
-  //  modificarPrecio():,
-}
 
 
 /* pero como carajos hago para que los objetos interactuen con el html/mostrarlos en la lista
