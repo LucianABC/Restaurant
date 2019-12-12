@@ -23,6 +23,39 @@
 * 
 * Por ultimo, puede hacerse con objetos o con clases.
 */
+
+
+/* quiero que cada mesa sea un objeto, que contenga el numero de mesa, la lista de productos
+y la cuenta.*/
+
+class Table  {
+    constructor(num,products=[]){
+        this.num= num;
+        this.products=products;
+    }
+    get check (){
+        let check=0;
+        for (let producto of products){
+            check += producto.price;
+        }
+        return `$${check}`
+    }
+}
+
+/* quiero que cada producto sea un objeto, que contenga el nombre y el precio*/
+class Producto {
+    constructor(nombre, precio) {
+        this.nombre= nombre;
+        this.precio=precio;
+    }
+  //  modificarPrecio():,
+}
+
+
+/* pero como carajos hago para que los objetos interactuen con el html/mostrarlos en la lista
+o sea crear el objeto y al mismo tiempo el ul? */
+
+
 const tableList = document.querySelector("#tableList");
 const addTableNum = document.querySelector("#tableName");
 const addButton = document.querySelector("#addButton");
@@ -65,34 +98,3 @@ const newTable = event => {
 };
 
 addButton.onclick=newTable;
-
-
-/* quiero que cada mesa sea un objeto, que contenga el numero de mesa, la lista de productos
-y la cuenta.*/
-
-class Table  {
-    constructor(num,products=[]){
-        this.num= num;
-        this.products=products;
-    }
-    get check (){
-        let check=0;
-        for (let producto of products){
-            check += producto.price;
-        }
-        return `$${check}`
-    }
-}
-
-/* quiero que cada producto sea un objeto, que contenga el nombre y el precio*/
-class Producto {
-    constructor(nombre, precio) {
-        this.nombre= nombre;
-        this.precio=precio;
-    }
-  //  modificarPrecio():,
-}
-
-
-/* pero como carajos hago para que los objetos interactuen con el html/mostrarlos en la lista
-o sea crear el objeto y al mismo tiempo el ul? */
