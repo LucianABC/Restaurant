@@ -35,6 +35,12 @@
 
 
 const catalog = new Catalogo;
+catalog.addProduct("cafe",50);
+catalog.addProduct("capuccino", 75);
+catalog.addProduct("cortado",60);
+catalog.addProduct("te",50);
+catalog.addProduct("medialunas",65);
+
 const tableList = document.querySelector("#tableList");
 const addTableNum = document.querySelector("#tableName");
 const addButton = document.querySelector("#addButton");

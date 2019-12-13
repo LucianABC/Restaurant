@@ -19,13 +19,34 @@ test('agregar prods al catalogo',()=>{
 });
 
 test('modificar prods del catalogo',()=>{
-    
     let catalogo1 = new Catalogo;
     catalogo1.addProduct("cafe",50);
     catalogo1.addProduct("capuccino", 75);
     //solo precio
     expect(catalogo1.modifyProduct("cafe",80)).toStrictEqual(catalogo1.catalog[0])
     //solo nombre AAAA Y ACA COMO HAGO NOSIERTO
-    expect(catalogo1.modifyProduct("capuccino"))
+    //expect(catalogo1.modifyProduct("capuccino",""))
     //todo
+});
+
+test('eliminar prods del catalogo',()=>{
+    let catalogo1 = new Catalogo;
+    catalogo1.addProduct("cafe",50);
+    catalogo1.addProduct("capuccino", 75);
+    catalogo1.deleteProduct("capuccino");
+    expect(catalogo1.catalog.length).toBe(1);
+});
+
+//CHECK
+
+test('agregar productos a la cuenta',()=>{
+    
+});
+
+test('modif prods en la cuenta',()=>{
+    
+});
+
+test('eliminar prods de la cuenta',()=>{
+    
 });

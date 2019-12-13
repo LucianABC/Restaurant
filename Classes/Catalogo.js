@@ -7,8 +7,11 @@ class Catalogo {
         this.catalog = [];
     }
 
-    deleteProduct(){
-
+    deleteProduct(name){
+        let index = this.catalog.findIndex((producto)=>{
+            return producto.name == name;
+        });
+        this.catalog.splice(index, 1);
     }
 
     addProduct(name, price){
@@ -24,16 +27,14 @@ class Catalogo {
                     producto.name=newName
                 } else if (newName==undefined){
                     producto.price=newPrice
-
                 } else if (typeof newPrice=="string"){
                     producto.name=newPrice
-
                 }
-                console.log(producto);
                 return producto
             }
         }
-        //como hago si solo quiero modificar el preio o solo el nombre?
+        //como hago si solo quiero modificar el precio o solo el nombre?
+        //(aca lo hice pero me suena que hay alguna forma mas linda)
               
         
     }

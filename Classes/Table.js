@@ -1,6 +1,5 @@
 
 const jsCheck =require('./Check.js'); 
-
 const Check = jsCheck.Check;
 
 class Table  {
