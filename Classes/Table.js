@@ -1,6 +1,9 @@
+try {
+    const jsCheck =require('./Check.js'); 
+    const Check = jsCheck.Check;
+} catch (e) {}
 
-const jsCheck =require('./Check.js'); 
-const Check = jsCheck.Check;
+
 
 class Table  {
     constructor(num){
@@ -10,8 +13,8 @@ class Table  {
 }
 
 
-
-module.exports = {
-    Table
-
-}
+try {
+    module.exports = {
+        Table
+    }
+ } catch (e) {}

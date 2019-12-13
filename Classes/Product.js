@@ -6,7 +6,8 @@ class Product {
     }
 }
 
-
-module.exports = {
-    Product
-}
+try {
+    module.exports = {
+      Product
+    }
+} catch (e) {}

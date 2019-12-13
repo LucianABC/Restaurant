@@ -1,7 +1,12 @@
-const jsProducto =require('./Product.js'); 
-const jsCatalogo = require('./Catalogo.js');
-const Product = jsProducto.Product;
-const Catalogo = jsCatalogo.Catalogo;
+try {
+    const jsProducto =require('./Product.js'); 
+    const jsCatalogo = require('./Catalogo.js');
+    const Product = jsProducto.Product;
+    const Catalogo = jsCatalogo.Catalogo;
+ } catch (e) {}
+
+
+
 
 class Check {
     constructor(){
@@ -42,8 +47,8 @@ class Check {
 
 
 
+try {
+    module.exports = {
+    Check}
+ } catch (e) {}
 
-module.exports = {
-    Check
-
-}

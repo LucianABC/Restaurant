@@ -1,7 +1,13 @@
-//lista de productos 
-const jsProducto =require('./Product.js'); 
-const Product = jsProducto.Product;
+try {
 
+    const jsProducto =require('./Product.js'); 
+    const Product = jsProducto.Product;
+
+} catch (e) {}
+
+
+
+//lista de productos 
 class Catalogo {
     constructor(){
         this.catalog = [];
@@ -40,8 +46,9 @@ class Catalogo {
     }
 }
 
+try {
+    module.exports = {
+        Catalogo
 
-module.exports = {
-    Catalogo
-
-}
+    }
+ } catch (e) {}

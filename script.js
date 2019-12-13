@@ -1,12 +1,14 @@
-
-    const jsProducto = require('./Classes/Product.js'); 
-    const jsTable = require('./Classes/Table.js'); 
-    const jsCheck = require('./Classes/Check.js'); 
-    const jsCatalogo = require('./Classes/Catalogo.js');
+try {
+    
+    const jsProducto = require('Classes/Product.js'); 
+    const jsTable = require('Classes/Table.js'); 
+    const jsCheck = require('Classes/Check.js'); 
+    const jsCatalogo = require('Classes/Catalogo.js');
     const Check = jsCheck.Check;
     const Product = jsProducto.Product;
     const Table = jsTable.Table;
     const Catalogo = jsCatalogo.Catalogo;
+ } catch (e) {}
 
 /**
 * Hacer un sistema para restaurant.
@@ -70,12 +72,13 @@ const newTable = event => {
     li.appendChild(close);
 
     let remove = document.createElement("span");
-    let removeButton = document.createElement("button");
-    removeButton.type="button";
-    removeButton.id="deleteButton";
-    removeButton.innerHTML="Eliminar"
-    removeButton.addEventListener("click", ()=>{
-
+    let deleteButton = document.createElement("button");
+    deleteButton.type="button";
+    deleteButton.id="deleteButton";
+    deleteButton.innerHTML="Eliminar"
+    deleteButton.addEventListener("click", ()=>{
+        let li = remove.parentElement;
+        li.parentNode.removeChild(li);        
     });
     remove.appendChild(removeButton);
     li.appendChild(remove);
