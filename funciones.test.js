@@ -19,13 +19,13 @@ test('agregar prods al catalogo',()=>{
 });
 
 test('modificar prods del catalogo',()=>{
-    //solo precio
+    
     let catalogo1 = new Catalogo;
     catalogo1.addProduct("cafe",50);
     catalogo1.addProduct("capuccino", 75);
-
-    expect(catalogo1.modifyProduct("cafe",80)).toStrictEqual(catalogo1[0])
-    //solo nombre
-
+    //solo precio
+    expect(catalogo1.modifyProduct("cafe",80)).toStrictEqual(catalogo1.catalog[0])
+    //solo nombre AAAA Y ACA COMO HAGO NOSIERTO
+    expect(catalogo1.modifyProduct("capuccino"))
     //todo
 });
