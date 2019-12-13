@@ -19,14 +19,15 @@ class Catalogo {
     modifyProduct(name, newPrice, newName){
         for (let producto of this.catalog){
             if (producto.name == name) {
-                if (new =undefined && newName!=undefined){
+                if (newPrice!=undefined && newName!=undefined){
                     producto.price=newPrice
                     producto.name=newName
                 } else if (newName==undefined){
                     producto.price=newPrice
 
-                } else if (newPrice==undefined){
-                    producto.name=newName
+                } else if (typeof newPrice=="string"){
+                    producto.name=newPrice
+
                 }
                 console.log(producto);
                 return producto
