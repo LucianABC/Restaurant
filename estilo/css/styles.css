@@ -9,36 +9,36 @@ body {
   align-items: center;
 }
 
-.div {
+.card {
   border: 1px solid #8f8f8f;
   border-radius: 10px;
   padding: 15px;
   width: 50%;
   box-sizing: border-box;
 }
-.div ul {
+.card ul {
   box-sizing: border-box;
   padding: 0;
   width: 100%;
   list-style: none;
 }
-.div ul span {
+.card ul span {
   margin: 10px;
   text-align: center;
   width: 25%;
 }
-.div ul li {
+.card ul li {
   padding: 4px;
   display: flex;
   width: 100%;
   font-size: 11px;
 }
-.div ul header {
+.card ul header {
   display: flex;
 }
-.div ul header:first-child {
+.card ul header:first-child {
   width: 100%;
-  padding-bottom: 7px;
+  padding: 0;
   font-size: 13px;
   font-weight: 600;
   border-bottom: 2px solid #c9c9c9;
