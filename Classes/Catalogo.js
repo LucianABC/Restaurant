@@ -1,5 +1,5 @@
 //lista de productos 
-const jsProducto =require('./Classes/Product.js'); 
+const jsProducto =require('./Product.js'); 
 const Product = jsProducto.Product;
 
 class Catalogo {
@@ -16,10 +16,18 @@ class Catalogo {
         this.catalog.push(product);
     }
 
-    modifyProduct(name, newPrice){
-        name.price=newPrice;
-        //si ya lo pushee no se modifica en el array, no?
-        //conviene que el metodo esté aca o en Product?
+    modifyProduct(name, newPrice, newName){
+        for (let producto of this.catalog){
+            if (producto.name == name) {
+                producto.price=newPrice
+                producto.name=newName
+                console.log(producto);
+                return producto
+            }
+        }
+        //como hago si solo quiero modificar el preio o solo el nombre?
+              
+        
     }
 }
 

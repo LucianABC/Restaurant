@@ -1,11 +1,12 @@
-const jsProducto =require('./Classes/Product.js'); 
-const jsTable =require('./Classes/Table.js'); 
-const jsCheck =require('./Classes/Check.js'); 
-const jsCatalogo = require('./Classes/Catalogo.js');
-const Check = jsCheck.Check;
-const Product = jsProducto.Product;
-const Table = jsTable.Table;
-const Catalogo = jsCatalogo.Catalogo;
+
+    const jsProducto = require('./Classes/Product.js'); 
+    const jsTable = require('./Classes/Table.js'); 
+    const jsCheck = require('./Classes/Check.js'); 
+    const jsCatalogo = require('./Classes/Catalogo.js');
+    const Check = jsCheck.Check;
+    const Product = jsProducto.Product;
+    const Table = jsTable.Table;
+    const Catalogo = jsCatalogo.Catalogo;
 
 /**
 * Hacer un sistema para restaurant.
@@ -33,14 +34,11 @@ const Catalogo = jsCatalogo.Catalogo;
 */
 
 
-/* pero como carajos hago para que los objetos interactuen con el html/mostrarlos en la lista
-o sea crear el objeto y al mismo tiempo el ul? */
-
 const catalog = new Catalogo;
-
 const tableList = document.querySelector("#tableList");
 const addTableNum = document.querySelector("#tableName");
 const addButton = document.querySelector("#addButton");
+
 const newTable = event => {
     const table = new Table;
     let li = document.createElement("li");
@@ -52,7 +50,7 @@ const newTable = event => {
     li.appendChild(tableNum);
 
     let check = document.createElement("span");
-    //check.innerHTML=table.check;
+    check.innerHTML=table.check.ticket;
 
     let close = document.createElement("span");
     let closeButton = document.createElement("button");

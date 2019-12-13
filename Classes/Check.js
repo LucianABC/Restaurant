@@ -1,6 +1,5 @@
-const jsProducto =require('./Classes/Product.js'); 
-const jsCatalogo = require('./Classes/Catalogo.js');
-const Check = jsCheck.Check;
+const jsProducto =require('./Product.js'); 
+const jsCatalogo = require('./Catalogo.js');
 const Product = jsProducto.Product;
 const Catalogo = jsCatalogo.Catalogo;
 
