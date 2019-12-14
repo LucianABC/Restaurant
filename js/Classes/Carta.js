@@ -8,25 +8,25 @@ try {
 
 
 //lista de productos 
-class Catalogo {
+const carta = {
     constructor(){
-        this.catalog = [];
-    }
+        this.carta= [];
+    },
 
     deleteProduct(name){
-        let index = this.catalog.findIndex((producto)=>{
+        let index = this.carta.findIndex((producto)=>{
             return producto.name == name;
         });
-        this.catalog.splice(index, 1);
-    }
+        this.carta.splice(index, 1);
+    },
 
     addProduct(name, price){
         let product = new Product (name, price);
-        this.catalog.push(product);
-    }
+        this.carta.push(product);
+    },
 
     modifyProduct(name, newPrice, newName){
-        for (let producto of this.catalog){
+        for (let producto of this.carta){
             if (producto.name == name) {
                 if (newPrice!=undefined && newName!=undefined){
                     producto.price=newPrice
@@ -48,7 +48,7 @@ class Catalogo {
 
 try {
     module.exports = {
-        Catalogo
+        carta
 
     }
  } catch (e) {}

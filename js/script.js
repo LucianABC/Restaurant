@@ -3,11 +3,11 @@ try {
     const jsProducto = require('./Classes/Product.js'); 
     const jsTable = require('./Classes/Table.js'); 
     const jsCheck = require('./Classes/Check.js'); 
-    const jsCatalogo = require('./Classes/Catalogo.js');
+    const jsCarta = require('./Classes/Carta.js');
     const Check = jsCheck.Check;
     const Product = jsProducto.Product;
     const Table = jsTable.Table;
-    const Catalogo = jsCatalogo.Catalogo;
+    const carta = jsCarta.carta;
  } catch (e) {}
 
 /**
@@ -36,12 +36,7 @@ try {
 */
 
 
-const catalog = new Catalogo;
-catalog.addProduct("cafe",50);
-catalog.addProduct("capuccino", 75);
-catalog.addProduct("cortado",60);
-catalog.addProduct("te",50);
-catalog.addProduct("medialunas",65);
+
 
 const tableList = document.querySelector("#tableList");
 const addTableNum = document.querySelector("#tableName");

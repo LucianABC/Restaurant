@@ -1,8 +1,8 @@
 try {
     const jsProducto =require('./Product.js'); 
-    const jsCatalogo = require('./Catalogo.js');
+    const jsCarta = require('./Carta.js');
     const Product = jsProducto.Product;
-    const Catalogo = jsCatalogo.Catalogo;
+    const carta = jsCarta.carta;
  } catch (e) {}
 
 
@@ -26,8 +26,8 @@ class Check {
         //cuando y donde se crea el catalogo? 
         let item = {cantidad: cant}
         for (let i =0; i++; i<catalog.length){//como sé en qué catalogo buscar? 
-            if (productName == catalog[i].name) {
-                item.producto=catalog[i]; //aca me crea el indice, no?
+            if (productName == carta[i].name) {
+                item.producto=carta[i]; //aca me crea el indice, no?
             }
         }
         this.products.push(item)
@@ -49,6 +49,7 @@ class Check {
 
 try {
     module.exports = {
-    Check}
+    Check
+    }
  } catch (e) {}
 
