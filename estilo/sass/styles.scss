@@ -15,8 +15,18 @@ body {
     padding: 15px;
     width:50%;
     box-sizing: border-box;
-
-        
+    margin: 15px;
+    
+    .mainButton {
+        color: white;
+        background-color:#0dbfad;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    input {
+        height: 15px;
+    }
     ul {
         box-sizing: border-box;
         padding:0;
@@ -27,14 +37,11 @@ body {
             text-align: center;
             width:25%;
         }
-        
         li {
             padding: 4px;
            display: flex;
             width: 100%;
             font-size: 11px;
-
-           
         }
         header {
             display:flex;
@@ -44,9 +51,12 @@ body {
                 font-size: 13px;
                 font-weight: 600;
                 border-bottom: 2px solid #c9c9c9 ;
-            
-
             }
+        }
+    }
+    #tableProductsList {
+        span{
+            width: 50%;
         }
     }
 }
