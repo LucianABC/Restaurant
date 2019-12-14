@@ -17,7 +17,7 @@ body {
 .cardsContainer {
     width:50%;
     box-sizing: border-box;
-    background-color: #0dbfad;
+    background-color: #0db3bf;
     border-radius: 10px;
     border: 1px solid #8f8f8f;
 }
@@ -35,7 +35,7 @@ body {
         font-weight: 500;
         width: 25%;
         text-align: center;
-        background: #0dbfad;;
+        background: #0db3bf;;
         
         &:first-child{
           border-top-left-radius: 10px; 
@@ -46,11 +46,11 @@ body {
         }
     }
 
+        
+    .active {
+        background:#09998a;
     
-.active {
-    background:#09998a;
- 
-}
+    }
 }
 
 

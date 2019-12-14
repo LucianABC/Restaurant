@@ -1,0 +1,1 @@
+const navtable = document.querySelector("#nav-Tables");

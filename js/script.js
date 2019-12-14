@@ -38,7 +38,7 @@ try {
 
 
 
-const tableList = document.querySelector("#tableList");
+const tableList = document.querySelector("#tablesList");
 const addTableNum = document.querySelector("#tableName");
 const addTableButton = document.querySelector("#addTableButton");
 
@@ -75,7 +75,7 @@ const newTable = event => {
         let li = remove.parentElement;
         li.parentNode.removeChild(li);        
     });
-    remove.appendChild(removeButton);
+    remove.appendChild(deleteButton);
     li.appendChild(remove);
 
     tableList.appendChild(li);

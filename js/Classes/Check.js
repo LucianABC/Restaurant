@@ -11,23 +11,23 @@ try {
 class Check {
     constructor(){
         this.products = [];
-        this._ticket;
-        for (let product of products){
+        this._ticket=0;
+        for (let product of this.products){
             _ticket += product[0]*(product[1].price);
         }
     }
     
     get ticket (){     
-        return `$${ticket}`
+        return `$${this._ticket}`
     }
 
     addProduct(cant, productName){
         //si el producto ya esta, sumar la cantidad
         //cuando y donde se crea el catalogo? 
         let item = {cantidad: cant}
-        for (let i =0; i++; i<catalog.length){//como sé en qué catalogo buscar? 
-            if (productName == carta[i].name) {
-                item.producto=carta[i]; //aca me crea el indice, no?
+        for (let i =0; i++; i<carta.carta.length){//como sé en qué catalogo buscar? 
+            if (productName == carta.carta[i].name) {
+                item.producto=carta.carta[i]; //aca me crea el indice, no?
             }
         }
         this.products.push(item)
