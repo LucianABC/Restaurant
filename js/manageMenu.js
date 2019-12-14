@@ -12,9 +12,9 @@ try {
 /*-----------------------M E N U----------------------------------------------*/
 const addToMenuButton = document.querySelector("#addToMenuButton")
 const newProduct = event => {
-    const name = document.querySelector("#productName");
+    let name = document.querySelector("#productName");
     name = name.value;
-    const price = document.querySelector("#productPrice");
+    let price = document.querySelector("#productPrice");
     price= price.value;
     const product = carta.addProduct(name,price);
 
@@ -37,7 +37,8 @@ const newProduct = event => {
     let deleteButton = document.createElement("button");
     deleteButton.type="button";
     deleteButton.class="deleteButton";
-    deletteButton.addEventListener("click", ()=>{
+    deleteButton.innerHTML="Eliminar";
+    deleteButton.addEventListener("click", ()=>{
         let li = deleteButtonSpan.parentElement;
         li.parentNode.removeChild(li)
     });

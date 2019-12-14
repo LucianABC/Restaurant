@@ -8,28 +8,27 @@ try {
 
 
 //lista de productos 
-const carta = {
-    constructor(){
-        this.carta= [];
-    },
+const carta = { 
+     menu: [],
+ 
 
     deleteProduct(name){
-        let index = this.carta.findIndex((producto)=>{
+        let index = this.menu.findIndex((producto)=>{
             return producto.name == name;
         });
-        this.carta.splice(index, 1);
+        this.menu.splice(index, 1);
     },
 
     addProduct(name, price){
-        let id= this.carta.length;
+        let id= this.menu.length;
         let product = new Product (id, name, price);
-        this.carta.push(product);
+        this.menu.push(product);
 
         return product
-    },
+    }, 
 
     modifyProduct(name, newPrice, newName){
-        for (let producto of this.carta){
+        for (let producto of this.menu){
             if (producto.name == name) {
                 if (newPrice!=undefined && newName!=undefined){
                     producto.price=newPrice
