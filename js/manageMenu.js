@@ -41,6 +41,7 @@ const newProduct = event => {
     deleteButton.addEventListener("click", ()=>{
         let li = deleteButtonSpan.parentElement;
         li.parentNode.removeChild(li)
+        carta.deleteProduct(product.name);
     });
     deleteButtonSpan.appendChild(deleteButton);
     li.appendChild(deleteButtonSpan);
