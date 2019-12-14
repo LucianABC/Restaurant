@@ -110,8 +110,14 @@ const newProduct = event => {
     let deleteButton = document.createElement("button");
     deleteButton.type="button";
     deleteButton.class="deleteButton";
+    deletteButton.addEventListener("click", ()=>{
+        let li = deleteButtonSpan.parentElement;
+        li.parentNode.removeChild(li)
+    });
     deleteButtonSpan.appendChild(deleteButton);
     li.appendChild(deleteButtonSpan);
+
+    ul.appendChild(li);
 
 }
 
