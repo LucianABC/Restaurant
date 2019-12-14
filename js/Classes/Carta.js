@@ -21,8 +21,11 @@ const carta = {
     },
 
     addProduct(name, price){
-        let product = new Product (name, price);
+        let id= this.carta.length;
+        let product = new Product (id, name, price);
         this.carta.push(product);
+
+        return product
     },
 
     modifyProduct(name, newPrice, newName){

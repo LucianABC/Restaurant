@@ -40,7 +40,7 @@ try {
 
 const tableList = document.querySelector("#tableList");
 const addTableNum = document.querySelector("#tableName");
-const addButton = document.querySelector("#addButton");
+const addTableButton = document.querySelector("#addTableButton");
 
 const newTable = event => {
     const table = new Table;
@@ -81,4 +81,38 @@ const newTable = event => {
     tableList.appendChild(li);
 };
 
-addButton.onclick=newTable;
+addTableButton.onclick=newTable;
+/*-----------------------M E N U----------------------------------------------*/
+const addToMenuButton = document.querySelector("#addToMenuButton")
+const newProduct = event => {
+    const name = document.querySelector("#productName");
+    name = name.value;
+    const price = document.querySelector("#productPrice");
+    price= price.value;
+    const product = carta.addProduct(name,price);
+
+    let ul = document.querySelector("#menu");
+    let li = document.createElement("li");
+    
+    let idSpan = document.createElement("span");
+    idSpan.innerHTML=product.id;
+    li.appendChild(idSpan);
+
+    let prodNameSpan = document.createElement("span");
+    prodNameSpan.innerHTML = product.name;
+    li.appendChild(prodNameSpan);
+
+    let priceSpan = document.createElement("span");
+    priceSpan.innerHTML=product.price;
+    li.appendChild(priceSpan);
+
+    let deleteButtonSpan = document.createElement("span");
+    let deleteButton = document.createElement("button");
+    deleteButton.type="button";
+    deleteButton.class="deleteButton";
+    deleteButtonSpan.appendChild(deleteButton);
+    li.appendChild(deleteButtonSpan);
+
+}
+
+addToMenuButton.onclick=newProduct;
