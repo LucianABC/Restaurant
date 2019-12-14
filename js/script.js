@@ -41,19 +41,22 @@ try {
 const tableList = document.querySelector("#tablesList");
 const addTableNum = document.querySelector("#tableName");
 const addTableButton = document.querySelector("#addTableButton");
-
+//ok, esto funca para el html pero no me crea el objeto
+//ademas no le encuentro mucho el sentido, porque el objeto lo uso solo como ayuda, basicamente.
 const newTable = event => {
-    const table = new Table;
+    
     let li = document.createElement("li");
     li.classList.add="table";
 
     let tableNum = document.createElement("span");
-    table.num= addTableNum.value;
+    const table = new Table(addTableNum.value);
     tableNum.innerHTML=table.num;
     li.appendChild(tableNum);
 
     let check = document.createElement("span");
-    check.innerHTML=table.check.ticket;
+    let ticket = table.check.ticket;
+    check.innerHTML= ticket;
+    li.appendChild(check);
 
     let close = document.createElement("span");
     let closeButton = document.createElement("button");

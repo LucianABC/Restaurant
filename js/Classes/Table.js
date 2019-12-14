@@ -6,11 +6,21 @@ try {
 
 
 class Table  {
-    constructor(num){
+    constructor(num, productos=[]){
         this.num= num;
-        this.check = new Check;
+        this._check=0;
+        this.productos=productos;
     }
+
+    get check() {
+        const check = new Check(this.productos);
+        this._check = check;
+
+        return check
+    }
+    
 }
+
 
 
 try {

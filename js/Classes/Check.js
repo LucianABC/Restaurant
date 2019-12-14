@@ -9,15 +9,16 @@ try {
 
 
 class Check {
-    constructor(){
-        this.products = [];
+    constructor(products=[]){
+        this.products = products;
         this._ticket=0;
-        for (let product of this.products){
-            _ticket += product[0]*(product[1].price);
-        }
     }
     
     get ticket (){     
+        
+        for (let product of this.products){
+            _ticket += product[0]*(product[1].price);
+        }
         return `$${this._ticket}`
     }
 
