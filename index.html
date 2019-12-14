@@ -7,78 +7,88 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./estilo/css/styles.css">
     <script src="./js/script.js"></script>    
-    <script src="./js/Classes/Catalogo.js"></script>   
+    <script src="./js/Classes/Carta.js"></script>   
     <script src="./js/Classes/Check.js"></script>
     <script src="./js/Classes/Product.js"></script>   
     <script src="./js/Classes/Table.js"></script>    
  </head>
 <body class="column">
-<!---------------------------------------------------------------------------->
-    <div id="manageTables" class="card column">
-        <ul id="tablesList">
-            <header>
-                <span>Numero de mesa</span>
-                <span>Cuenta</span>
-                <span>Cerrar mesa</span>
-                <span>Eliminar mesa</span>                        
-            </header>
+    <section class="all column">
+        <article class="cardsContainer ">
+            <nav class="cardNav">
+                <span id="navTables" class="active">Mesas</span>
+                <span id="navAddTableProd">Agregar a cuenta</span>
+                <span id="navSeeTableProd"> Ver cuenta</span>
+                <span i="navMenu">Menu</span>
+            </nav>
+    <!---------------------------------------------------------------------------->
+            <div id="manageTables" class="card column">
+                <ul id="tablesList">
+                    <header>
+                        <span>Numero de mesa</span>
+                        <span>Cuenta</span>
+                        <span>Cerrar mesa</span>
+                        <span>Eliminar mesa</span>                        
+                    </header>
 
-        </ul>
+                </ul>
 
-        <div>
-            <input type="text" id="tableName" placeholder=" Numero de mesa">
-            <button type="button" class="mainButton" id="addTableButton">Agregar mesa</button>
-        </div>
-    </div>
-<!--------------------------AGREGAR A MESA-------------------------------------->
+                <div>
+                    <input type="text" id="tableName" placeholder=" Numero de mesa">
+                    <button type="button" class="mainButton" id="addTableButton">Agregar mesa</button>
+                </div>
+            </div>
+        <!--------------------------AGREGAR A MESA-------------------------------------->
 
-    <div id="tableProducts" class="card column">
-        <ul id="tableProductsList">
-            <header>
-                <span>Producto</span>
-                <span>Cantidad</span>
-            </header>
-            
-           
-        </ul>
+            <div id="tableProducts" class="card column">
+                <ul id="tableProductsList">
+                    <header>
+                        <span>Producto</span>
+                        <span>Cantidad</span>
+                    </header>
+                    
+                
+                </ul>
 
-        <div>
-            <!---aca va el desplegable p elegir mesa-->
+                <div>
+                    <!---aca va el desplegable p elegir mesa-->
 
-            <button type="button" class="mainButton" id="addToTableButton">Agregar a la mesa</button>
-        </div>
-    </div>
-<!----------------------------M E N U---------------------------------------------->
-    <div id="products" class="card column">
-        <ul id="menu">
-            <header>
-                <span>Id</span>
-                <span>Producto</span>
-                <span>Precio</span>
-                <span>Eliminar</span>
-            </header>
-          
-           
-        </ul>
-        <div>
-            <input type="text"id="productName" placeholder="Producto" >
-            <input type="text" id="productPrice" placeholder="Precio">
-            <button type="button" class="mainButton" id="addToMenuButton">Agregar producto</button>
-        </div>
-    </div>
-<!-------------------------------------------------------------------------->   
-    <div id="prodsPertable" class="card column">
-        <div>
-            <!---aca va el desplegable p elegir mesa-->
-        </div>
-        <ul id="prodsPerTableList">
-            <header>
-                <span>Producto</span>
-                <span>Cantidad</span>
-                <span>Precio</span>
-                <span>Eliminar</span>
-            </header>
-        </ul>
-    </div>
+                    <button type="button" class="mainButton" id="addToTableButton">Agregar a la mesa</button>
+                </div>
+            </div>
+        <!----------------------------M E N U---------------------------------------------->
+            <div id="products" class="card column">
+                <ul id="menu">
+                    <header>
+                        <span>Id</span>
+                        <span>Producto</span>
+                        <span>Precio</span>
+                        <span>Eliminar</span>
+                    </header>
+                
+                
+                </ul>
+                <div>
+                    <input type="text"id="productName" placeholder="Producto" >
+                    <input type="text" id="productPrice" placeholder="Precio">
+                    <button type="button" class="mainButton" id="addToMenuButton">Agregar producto</button>
+                </div>
+            </div>
+        <!-------------------------------------------------------------------------->   
+            <div id="prodsPertable" class="card column">
+                <div>
+                    <!---aca va el desplegable p elegir mesa-->
+                </div>
+                <ul id="prodsPerTableList">
+                    <header>
+                        <span>Producto</span>
+                        <span>Cantidad</span>
+                        <span>Precio</span>
+                        <span>Eliminar</span>
+                    </header>
+                </ul>
+            </div>
+        </article>
+    </section>
 </body>
 </html>
