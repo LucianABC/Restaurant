@@ -10,7 +10,9 @@ try {
     const carta = jsCarta.carta;
  } catch (e) {}
 
+const restaurant = {
 
+};
 
 const tableList = document.querySelector("#tablesList");
 const addTableNum = document.querySelector("#tableName");
@@ -20,20 +22,21 @@ const newTable = event => {
     let li = document.createElement("li");
     li.classList.add="table";
 
-    let tableNum = document.createElement("span");
-    const table = new Table(addTableNum.value);
-    // el objeto que creo tiene uqe ser global?
-    //hay alguna forma de que se cree con el valor del input?
-    //(x ej const 2 = new Table(2) o algo asi)
-    tableNum.innerHTML=table.num;
-    li.appendChild(tableNum);
+    let tableNum = addTableNum.value;
+    
+    const table = new Table(tableNum);
+    restaurant[tableNum] = table;
 
-    let check = document.createElement("span");
+    let tableNumSpan = document.createElement("span");
+    tableNumSpan.innerHTML=table.num;
+    li.appendChild(tableNumSpan);
+
+    let checkSpan = document.createElement("span");
     let ticket = table.check.ticket;
-    check.innerHTML= ticket;
-    li.appendChild(check);
+    checkSpan.innerHTML= ticket;
+    li.appendChild(checkSpan);
 
-    let close = document.createElement("span");
+    let closeSpan = document.createElement("span");
     let closeButton = document.createElement("button");
     //no me queda claro qué tiene que hacer este boton
     closeButton.type="button";
@@ -42,10 +45,10 @@ const newTable = event => {
     closeButton.addEventListener("click", ()=>{
 
     });
-    close.appendChild(closeButton);
-    li.appendChild(close);
+    closeSpan.appendChild(closeButton);
+    li.appendChild(closeSpan);
 
-    let remove = document.createElement("span");
+    let deleteSpan = document.createElement("span");
     let deleteButton = document.createElement("button");
     deleteButton.type="button";
     deleteButton.id="deleteButton";
@@ -54,10 +57,12 @@ const newTable = event => {
         let li = remove.parentElement;
         li.parentNode.removeChild(li);        
     });
-    remove.appendChild(deleteButton);
-    li.appendChild(remove);
+    deleteSpan.appendChild(deleteButton);
+    li.appendChild(deleteSpan);
 
     tableList.appendChild(li);
+
+    
 };
 
 const addTableButton = document.querySelector("#addTableButton");
