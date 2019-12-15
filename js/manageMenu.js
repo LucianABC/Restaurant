@@ -1,5 +1,4 @@
 try {
-    
     const jsProducto = require('./Classes/Product.js'); 
     const jsTable = require('./Classes/Table.js'); 
     const jsCheck = require('./Classes/Check.js'); 
@@ -9,7 +8,7 @@ try {
     const Table = jsTable.Table;
     const carta = jsCarta.carta;
  } catch (e) {}
-/*-----------------------M E N U----------------------------------------------*/
+
 const addToMenuButton = document.querySelector("#addToMenuButton")
 const newProduct = event => {
     let name = document.querySelector("#productName");

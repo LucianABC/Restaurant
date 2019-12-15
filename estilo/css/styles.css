@@ -43,7 +43,11 @@ body {
   border-top-right-radius: 10px;
 }
 .cardNav .active {
-  background: #09998a;
+  background: #077a82;
+}
+
+.hide {
+  display: none;
 }
 
 .card {
