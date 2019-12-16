@@ -1,17 +1,18 @@
 try {
-    
+    const jsManageTables = require('./manageTables.js')
     const jsProducto = require('./Classes/Product.js'); 
     const jsTable = require('./Classes/Table.js'); 
-    const jsCheck = require('./Classes/Check.js'); 
+    const jsTableProduct = require('./Classes/TableProduct.js'); 
     const jsCarta = require('./Classes/Carta.js');
-    const Check = jsCheck.Check;
+    const TableProduct= jsTableProduct.TableProduct;
     const Product = jsProducto.Product;
     const Table = jsTable.Table;
     const carta = jsCarta.carta;
+    const restaurant = jsManageTables.restaurant;
     //const addToMenuButton = jsManageMenu.addToMenuButton;
     
  } catch (e) {}
- const showMenu = document.querySelector("#addToMenuButton")
+ const showMenu = document.querySelector("#addToMenuButton");
 
 
 const showProductList = event => {
@@ -19,9 +20,9 @@ const showProductList = event => {
     let product = carta.menu[index];
 
     let ul = document.querySelector("#tableProductsList");
-
+    //no me esta agregando la clase
     let li = document.createElement("li");
-    
+    li.class="menuItem";
     let productSpan = document.createElement("span");
     productSpan.innerHTML=product.name;
     li.appendChild(productSpan);
@@ -29,6 +30,7 @@ const showProductList = event => {
     let cantSpan=document.createElement("span");
     let input = document.createElement("input");
     input.type="text";
+    //no me esta agregando la clase
     input.classList.add="cantProd";
     cantSpan.appendChild(input);
     li.appendChild(cantSpan);
@@ -39,9 +41,19 @@ const showProductList = event => {
 const addToTableButton = document.querySelector("#addToTableButton");
 
 const addToTable = event => {
-//quiero que tome el valor de cada input y lo asigne a su respectiva mesa
-//la mesa la saco del desplegable - como?
-
+    let products = document.getElementsByClassName(".menuItem");
+    for (let menuItem of products){
+        let spans = menuItem.children;
+        let product = spans[0].value;
+        let cant = spans[1].children;
+        cant = cant[0].value;
+        
+        let tableNum = document.querySelector("#selectTable");
+        tableNum =tableNum.value;
+        restaurant[tableNum].addProduct(product,cant);
+    }
+    //quiero un array con los productos ?
+    
 };
 
 addToTableButton.onclick=addToTable;

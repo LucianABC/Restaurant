@@ -2,7 +2,7 @@ try {
     const jsAddToTable = require('./addToTable.js')
     const jsProducto = require('./Classes/Product.js'); 
     const jsTable = require('./Classes/Table.js'); 
-    const jsCheck = require('./Classes/Check.js'); 
+    const jsCheck = require('./Classes/TableProduct.js'); 
     const jsCarta = require('./Classes/Carta.js');
     const Check = jsCheck.Check;
     const Product = jsProducto.Product;

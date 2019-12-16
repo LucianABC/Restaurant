@@ -1,23 +1,39 @@
 try {
-    const jsCheck =require('./Check.js'); 
-    const Check = jsCheck.Check;
+    const jsTableProduct =require('./TableProduct.js'); 
+    const TableProduct = jsTableProduct.TableProduct;
 } catch (e) {}
 
 
 
 class Table  {
-    constructor(num, productos=[]){
+    constructor(num){
         this.num= num;
         this._check=0;
-        this.productos=productos;
+        this.products=[];
     }
 
     get check() {
-        const check = new Check(this.productos);
-        this._check = check;
-
-        return check
+        let check = 0;
+       for (let tableProduct of this.products) {
+           let cant = tableProduct.cant;
+           let price = tableProduct.product.price;
+            check += price+cant;
+       }
+       this._check=check;
+        return `$${check}`
     }
+
+    addProduct(producto,cant) {
+        let productTable=new TableProduct(producto, cant)
+        this.productos.push(productTable)
+    }
+    
+    deleteProduct(){
+        let index = this.products.findIndex((item)=>{
+             return item.producto.name == name;
+         });
+        this.products.splice(index, 1);
+     }
     
 }
 
