@@ -50,9 +50,12 @@ const addToTable = event => {
         
         let tableNum = document.querySelector("#selectTable");
         tableNum =tableNum.value;
-        restaurant[tableNum].addProduct(product,cant);
+
+        let table= restaurant[tableNum];
+        table.addProduct(product,cant);
+
     }
-    //quiero un array con los productos ?
+    
     
 };
 

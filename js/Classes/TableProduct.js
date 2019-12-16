@@ -9,7 +9,7 @@ try {
 class TableProduct {
     constructor(product,cant){
         this.product;
-        for(let item of carta){
+        for(let item of carta.menu){
             if (product==item.name) {
                 this.product=item;
             }

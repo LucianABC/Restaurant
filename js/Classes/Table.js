@@ -25,7 +25,7 @@ class Table  {
 
     addProduct(producto,cant) {
         let productTable=new TableProduct(producto, cant)
-        this.productos.push(productTable)
+        this.products.push(productTable)
     }
     
     deleteProduct(){
