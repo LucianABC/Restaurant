@@ -8,6 +8,8 @@ try {
     const Product = jsProducto.Product;
     const Table = jsTable.Table;
     const carta = jsCarta.carta;
+    const addToTable = jsAddToTable.showProductList;
+    const showMenu = jsAddToTable.showMenu;
  } catch (e) {}
 
 const addToMenuButton = document.querySelector("#addToMenuButton")
@@ -52,6 +54,7 @@ const newProduct = event => {
 
 
 addToMenuButton.onclick=newProduct;
+showMenu.addEventListener("click", showProductList);
 
 
 

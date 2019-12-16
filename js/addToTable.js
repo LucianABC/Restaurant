@@ -16,6 +16,7 @@ try {
 
 const showProductList = event => {
     let index = carta.menu.length -1;
+    
     let product = carta.menu[index];
 
     let ul = document.querySelector("#tableProductsList");
@@ -36,11 +37,10 @@ const showProductList = event => {
     ul.appendChild(li);
 }
 
-showMenu.addEventListener("click", showProductList);
 
 try {
     module.exports = {
-        showProductList
-
+        showProductList,
+        showMenu
     }
  } catch (e) {}
