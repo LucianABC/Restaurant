@@ -16,7 +16,7 @@ class Table  {
         let check = 0;
        for (let tableProduct of this.products) {
            let cant = tableProduct.cant;
-           let price = tableProduct.product.price;
+           let price = tableProduct.product._price;
             check += price*cant;
        }
        this._check=check;
