@@ -62,8 +62,24 @@ const newTable = event => {
 
     tableList.appendChild(li);
 
-    
+    let selectMenu = document.querySelector("#selectTable");
+    let tableOption = document.createElement("option");
+    tableOption.value=tableNum;
+    tableOption.innerHTML=tableNum;
+    selectMenu.appendChild(tableOption);
 };
+
+
 
 const addTableButton = document.querySelector("#addTableButton");
 addTableButton.onclick=newTable;
+
+
+
+
+
+try {
+    module.exports = {
+        restaurant
+    }
+ } catch (e) {}

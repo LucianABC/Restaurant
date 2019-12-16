@@ -16,7 +16,6 @@ try {
 
 const showProductList = event => {
     let index = carta.menu.length -1;
-    
     let product = carta.menu[index];
 
     let ul = document.querySelector("#tableProductsList");
@@ -30,12 +29,22 @@ const showProductList = event => {
     let cantSpan=document.createElement("span");
     let input = document.createElement("input");
     input.type="text";
-    input.id="cantProd";
+    input.classList.add="cantProd";
     cantSpan.appendChild(input);
     li.appendChild(cantSpan);
 
     ul.appendChild(li);
 }
+
+const addToTableButton = document.querySelector("#addToTableButton");
+
+const addToTable = event => {
+//quiero que tome el valor de cada input y lo asigne a su respectiva mesa
+//la mesa la saco del desplegable - como?
+
+};
+
+addToTableButton.onclick=addToTable;
 
 
 try {
