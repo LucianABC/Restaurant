@@ -8,7 +8,7 @@ try {
 class Table  {
     constructor(num){
         this.num= num;
-        this._check=0;
+        this._check;
         this.products=[];
     }
 
@@ -17,7 +17,7 @@ class Table  {
        for (let tableProduct of this.products) {
            let cant = tableProduct.cant;
            let price = tableProduct.product.price;
-            check += price+cant;
+            check += price*cant;
        }
        this._check=check;
         return `$${check}`

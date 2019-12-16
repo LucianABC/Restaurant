@@ -41,6 +41,7 @@ const showProductList = event => {
 const addToTableButton = document.querySelector("#addToTableButton");
 
 const addToTable = event => {
+    // no me esta agregando al array
     let products = document.getElementsByClassName(".menuItem");
     for (let menuItem of products){
         let spans = menuItem.children;
