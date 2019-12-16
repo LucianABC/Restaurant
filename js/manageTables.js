@@ -54,7 +54,7 @@ const newTable = event => {
     deleteButton.id="deleteButton";
     deleteButton.innerHTML="Eliminar"
     deleteButton.addEventListener("click", ()=>{
-        let li = remove.parentElement;
+        let li = deleteSpan.parentElement;
         li.parentNode.removeChild(li);        
     });
     deleteSpan.appendChild(deleteButton);

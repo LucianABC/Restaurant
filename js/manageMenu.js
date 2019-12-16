@@ -1,4 +1,5 @@
 try {
+    const jsAddToTable = require('./addToTable.js')
     const jsProducto = require('./Classes/Product.js'); 
     const jsTable = require('./Classes/Table.js'); 
     const jsCheck = require('./Classes/Check.js'); 
@@ -46,7 +47,11 @@ const newProduct = event => {
     li.appendChild(deleteButtonSpan);
 
     ul.appendChild(li);
-
+    
 }
 
+
 addToMenuButton.onclick=newProduct;
+
+
+
