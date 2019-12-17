@@ -9,11 +9,11 @@ try {
 class TableProduct {
     constructor(product,cant){
         this.product;
-        for(let item of carta.menu){
-            if (product==item.name) {
-                this.product=item;
+            for(let item of carta.menu){
+                if (product==item.name) {
+                    this.product=item;
+                }
             }
-        }
         this.cant=cant;
     }
 }

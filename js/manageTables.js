@@ -42,7 +42,7 @@ const newTable = event => {
     closeButton.id="closeButton";
     closeButton.innerHTML="Cerrar";
     closeButton.addEventListener("click", ()=>{
-        //getCheck
+        checkSpan.innerHTML=table.check;
     });
     closeSpan.appendChild(closeButton);
     li.appendChild(closeSpan);
