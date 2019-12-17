@@ -55,8 +55,12 @@ const newTable = event => {
     deleteButton.addEventListener("click", ()=>{
         let li = deleteSpan.parentElement;
         li.parentNode.removeChild(li);
-        let option = document.querySelector(`#option${tableNum}`);
+        let option = document.querySelector(`#selectTable > #option${tableNum}`);
         option.parentNode.removeChild(option);
+
+        option= document.querySelector(`#selectProdsPerTable > #option${tableNum}`);
+        option.parentNode.removeChild(option);
+
     });
     deleteSpan.appendChild(deleteButton);
     li.appendChild(deleteSpan);
