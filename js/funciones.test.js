@@ -1,24 +1,35 @@
 
-const jsProducto = require('./Classes/Product.js'); 
-const jsTable = require('./Classes/Table.js'); 
-const jsCheck = require('./Classes/Check.js'); 
-const jsCatalogo = require('./Classes/Catalogo.js');
-const Check = jsCheck.Check;
-const Product = jsProducto.Product;
-const Table = jsTable.Table;
-const Catalogo = jsCatalogo.Catalogo;
+    const jsTableProduct = require('./Classes/TableProduct.js');
+    const jsProducto = require('./Classes/Product.js'); 
+    const jsTable = require('./Classes/Table.js'); 
+    const jsCarta = require('./Classes/Carta.js');
+    const TableProduct = jsTableProduct.TableProduct;
+    const Product = jsProducto.Product;
+    const Table = jsTable.Table;
+    const carta = jsCarta.carta;
+    
 
-//CATALOGO 
+//CARTA
+beforeEach(() => {
+   carta.menu = [];
+  });
+  
+test('agregar prods a la carta',()=>{
+    carta.addProduct("Cafe",50);
+    carta.addProduct("Medialuna", 20);
 
-test('agregar prods al catalogo',()=>{
-    let catalogo1 = new Catalogo;
-    catalogo1.addProduct("cafe",50);
-    catalogo1.addProduct("capuccino", 75);
-
-    expect(catalogo1.catalog.length).toBe(2)
+    expect(carta.menu.length).toBe(2)
 });
 
-test('modificar prods del catalogo',()=>{
+test('eliminar prods de la carta',()=>{
+    carta.addProduct("Cafe",50);
+    carta.addProduct("Medialuna", 20);
+    carta.deleteProduct("Cafe");
+    expect(carta.menu.length).toBe(1);
+});
+
+/*
+test('',()=>{
     let catalogo1 = new Catalogo;
     catalogo1.addProduct("cafe",50);
     catalogo1.addProduct("capuccino", 75);
@@ -27,26 +38,7 @@ test('modificar prods del catalogo',()=>{
     //solo nombre AAAA Y ACA COMO HAGO NOSIERTO
     //expect(catalogo1.modifyProduct("capuccino",""))
     //todo
-});
-
-test('eliminar prods del catalogo',()=>{
-    let catalogo1 = new Catalogo;
-    catalogo1.addProduct("cafe",50);
-    catalogo1.addProduct("capuccino", 75);
-    catalogo1.deleteProduct("capuccino");
-    expect(catalogo1.catalog.length).toBe(1);
-});
+});*/
 
 //CHECK
 
-test('agregar productos a la cuenta',()=>{
-    
-});
-
-test('modif prods en la cuenta',()=>{
-    
-});
-
-test('eliminar prods de la cuenta',()=>{
-    
-});
