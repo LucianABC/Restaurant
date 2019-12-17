@@ -28,9 +28,9 @@ class Table  {
         this.products.push(productTable)
     }
     
-    deleteProduct(){
+    deleteProduct(producto){
         let index = this.products.findIndex((item)=>{
-             return item.producto.name == name;
+             return item.product.name == producto;
          });
         this.products.splice(index, 1);
      }
