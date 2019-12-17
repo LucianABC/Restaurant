@@ -44,6 +44,9 @@ const newProduct = event => {
         let li = deleteButtonSpan.parentElement;
         li.parentNode.removeChild(li)
         carta.deleteProduct(product.name);
+
+        li = document.querySelector(`#${product.name}`);
+        li.parentNode.removeChild(li)
     });
     deleteButtonSpan.appendChild(deleteButton);
     li.appendChild(deleteButtonSpan);
