@@ -40,5 +40,29 @@ test('',()=>{
     //todo
 });*/
 
-//CHECK
+//TABLE
 
+test('agregar prods a la mesa',()=>{
+    carta.addProduct("Cafe",50);
+    let table = new Table(2);
+    table.addProduct("Cafe", 2);
+
+    expect(table.products.length).toBe(1);
+
+});
+
+test('borrar prods de la mesa',()=>{
+    carta.addProduct("Cafe",50);
+    carta.addProduct("Medialuna", 20);
+
+    let table = new Table(2);
+    table.addProduct("Cafe", 2);
+    table.addProduct("Medialuna", 2);
+    
+    table.deleteProduct("Cafe", 1);
+    expect(table.products[0].cant).toBe(1);
+
+    table.deleteProduct("Medialuna", 2);
+    expect(table.products.length).toBe(1);
+
+});
