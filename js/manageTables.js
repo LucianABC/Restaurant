@@ -20,7 +20,7 @@ const addTableNum = document.querySelector("#tableName");
 const newTable = event => {
     
     let li = document.createElement("li");
-    li.classList.add="table";
+    li.classList.add("table");
 
     let tableNum = addTableNum.value;
     
@@ -43,7 +43,7 @@ const newTable = event => {
     closeButton.id="closeButton";
     closeButton.innerHTML="Cerrar";
     closeButton.addEventListener("click", ()=>{
-
+        //getCheck
     });
     closeSpan.appendChild(closeButton);
     li.appendChild(closeSpan);

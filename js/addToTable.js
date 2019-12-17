@@ -22,7 +22,8 @@ const showProductList = event => {
     let ul = document.querySelector("#tableProductsList");
     //no me esta agregando la clase
     let li = document.createElement("li");
-    li.class="menuItem";
+    li.classList.add("menuItem");
+    li.id=product.name;
     let productSpan = document.createElement("span");
     productSpan.innerHTML=product.name;
     li.appendChild(productSpan);
@@ -31,7 +32,7 @@ const showProductList = event => {
     let input = document.createElement("input");
     input.type="text";
     //no me esta agregando la clase
-    input.classList.add="cantProd";
+    input.classList.add("cantProd");
     cantSpan.appendChild(input);
     li.appendChild(cantSpan);
 
@@ -42,10 +43,10 @@ const addToTableButton = document.querySelector("#addToTableButton");
 
 const addToTable = event => {
     // no me esta agregando al array
-    let products = document.getElementsByClassName(".menuItem");
+    let products = document.querySelectorAll(".menuItem");
     for (let menuItem of products){
         let spans = menuItem.children;
-        let product = spans[0].value;
+                let product = spans[0].innerHTML;
         let cant = spans[1].children;
         cant = cant[0].value;
         
