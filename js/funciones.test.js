@@ -28,18 +28,6 @@ test('eliminar prods de la carta',()=>{
     expect(carta.menu.length).toBe(1);
 });
 
-/*
-test('',()=>{
-    let catalogo1 = new Catalogo;
-    catalogo1.addProduct("cafe",50);
-    catalogo1.addProduct("capuccino", 75);
-    //solo precio
-    expect(catalogo1.modifyProduct("cafe",80)).toStrictEqual(catalogo1.catalog[0])
-    //solo nombre AAAA Y ACA COMO HAGO NOSIERTO
-    //expect(catalogo1.modifyProduct("capuccino",""))
-    //todo
-});*/
-
 //TABLE
 
 test('agregar prod nuevo a la mesa',()=>{
@@ -48,7 +36,6 @@ test('agregar prod nuevo a la mesa',()=>{
     table.addProduct("Cafe", 2);
 
     expect(table.products.length).toBe(1);
-
 });
 
 test('agregar prods existente a la mesa',()=>{
@@ -58,7 +45,6 @@ test('agregar prods existente a la mesa',()=>{
     table.addProduct("Cafe", 3)
 
     expect(table.products[0].cant).toBe(5);
-
 });
 
 test('borrar prods de la mesa',()=>{
@@ -71,10 +57,8 @@ test('borrar prods de la mesa',()=>{
     
     table.deleteProduct("Cafe", 1);
     expect(table.products[0].cant).toBe(1);
-
-
-
 });
+
 test('borrar toda la cantidad de un item de la mesa',()=>{
     carta.addProduct("Cafe",50);
     carta.addProduct("Medialuna", 20);
@@ -85,5 +69,4 @@ test('borrar toda la cantidad de un item de la mesa',()=>{
 
     table.deleteProduct("Medialuna", 2);
     expect(table.products.length).toBe(1);
-
 });

@@ -18,22 +18,35 @@ class Table  {
            let cant = tableProduct.cant;
            let price = tableProduct.product.price;
             check += price*cant;
-       }
+        }
        this._check=check;
         return `$${check}`
     }
 
     addProduct(producto,cant) {
-        let productTable=new TableProduct(producto, cant)
-        this.products.push(productTable)
+        let index = this.products.findIndex((item)=>{
+            return item.product.name == producto;
+        });
+        
+        if (index == -1) {
+            let productTable=new TableProduct(producto, cant)
+            this.products.push(productTable)
+        } else {
+        this.products[index].cant += cant;
+        }
     }
     
-    deleteProduct(producto){
+    deleteProduct(producto, cant){
         let index = this.products.findIndex((item)=>{
              return item.product.name == producto;
-         });
+        });
+        
+        if (this.products[index].cant == cant) {
         this.products.splice(index, 1);
-     }
+        } else {
+        this.products[index].cant -= cant;
+        }
+    }
     
 }
 

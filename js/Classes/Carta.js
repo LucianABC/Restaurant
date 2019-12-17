@@ -42,9 +42,7 @@ const carta = {
             }
         }
         //como hago si solo quiero modificar el precio o solo el nombre?
-        //(aca lo hice pero me suena que hay alguna forma mas linda)
-              
-        
+        //(aca lo hice pero me suena que hay alguna forma mas linda)     
     }
 }
 
