@@ -38,7 +38,6 @@ const newTable = event => {
 
     let closeSpan = document.createElement("span");
     let closeButton = document.createElement("button");
-    //no me queda claro qué tiene que hacer este boton
     closeButton.type="button";
     closeButton.id="closeButton";
     closeButton.innerHTML="Cerrar";
@@ -70,6 +69,14 @@ const newTable = event => {
     tableOption.id=`option${tableNum}`
     tableOption.innerHTML=tableNum;
     selectMenu.appendChild(tableOption);
+
+    let selectAddProdsPerTable = document.querySelector("#selectProdsPerTable");
+    tableOption = document.createElement("option");
+    tableOption.value=tableNum;
+    tableOption.id=`option${tableNum}`
+    tableOption.innerHTML=tableNum;
+    selectAddProdsPerTable.appendChild(tableOption);
+
 };
 
 
