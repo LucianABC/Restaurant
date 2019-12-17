@@ -42,12 +42,22 @@ test('',()=>{
 
 //TABLE
 
-test('agregar prods a la mesa',()=>{
+test('agregar prod nuevo a la mesa',()=>{
     carta.addProduct("Cafe",50);
     let table = new Table(2);
     table.addProduct("Cafe", 2);
 
     expect(table.products.length).toBe(1);
+
+});
+
+test('agregar prods existente a la mesa',()=>{
+    carta.addProduct("Cafe",50);
+    let table = new Table(2);
+    table.addProduct("Cafe", 2);
+    table.addProduct("Cafe", 3)
+
+    expect(table.products[0].cant).toBe(5);
 
 });
 
@@ -61,6 +71,17 @@ test('borrar prods de la mesa',()=>{
     
     table.deleteProduct("Cafe", 1);
     expect(table.products[0].cant).toBe(1);
+
+
+
+});
+test('borrar toda la cantidad de un item de la mesa',()=>{
+    carta.addProduct("Cafe",50);
+    carta.addProduct("Medialuna", 20);
+
+    let table = new Table(2);
+    table.addProduct("Cafe", 2);
+    table.addProduct("Medialuna", 2);
 
     table.deleteProduct("Medialuna", 2);
     expect(table.products.length).toBe(1);
