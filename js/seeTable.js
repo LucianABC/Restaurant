@@ -15,26 +15,35 @@ try {
 const selectProdsPerTable = document.querySelector("#selectProdsPerTable");
 
 const seeTableProducts = event => {
+    const ul = document.querySelector("#prodsPerTableList");
+    ul.innerHTML=`<header>
+    <span>Producto</span>
+    <span>Cantidad</span>
+    <span>Precio</span>
+    <span>Eliminar</span>
+</header>`;
+
     if (selectProdsPerTable.value != -1) {
         let tableNumber = selectProdsPerTable.value;
         let table=restaurant[tableNumber];
         let tableProductList = restaurant[tableNumber].products;
-        const ul = document.querySelector("#prodsPerTableList");
+        
 
-        for (let product of tableProductList) {
+        for (let item of tableProductList) {
             let li = document.createElement("li");
             
             let spanName = document.createElement("span");
-            spanName.innerHTML=product.product.name;
+            
+            spanName.innerHTML= item.product.name;
             li.appendChild(spanName);
 
             let spanQuant = document.createElement("span");
-            spanQuant.innerHTML = product.cant;
+            spanQuant.innerHTML = item.cant;
             li.appendChild(spanQuant);
 
             let spanPrice = document.createElement("span");
-            spanName.innerHTML=(product.product.price * product.cant);
-            li.appendChild(spanName);
+            spanPrice.innerHTML=(item.product.price * item.cant);
+            li.appendChild(spanPrice);
 
             let spanDelete = document.createElement("span");
             let deleteProd = document.createElement("button");
