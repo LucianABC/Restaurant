@@ -42,7 +42,6 @@ const showProductList = event => {
 const addToTableButton = document.querySelector("#addToTableButton");
 
 const addToTable = event => {
-    // no me esta agregando al array
     let products = document.querySelectorAll(".menuItem");
     for (let menuItem of products){
         let spans = menuItem.children;
@@ -55,10 +54,7 @@ const addToTable = event => {
 
         let table= restaurant[tableNum];
         table.addProduct(product,cant);
-
     }
-    
-    
 };
 
 addToTableButton.onclick=addToTable;
