@@ -9,7 +9,7 @@ try {
     const Table = jsTable.Table;
     const carta = jsCarta.carta;
     const restaurant = jsManageTables.restaurant;
-    //const addToMenuButton = jsManageMenu.addToMenuButton;
+    
     
  } catch (e) {}
  const showMenu = document.querySelector("#addToMenuButton");
@@ -20,7 +20,7 @@ const showProductList = event => {
     let product = carta.menu[index];
 
     let ul = document.querySelector("#tableProductsList");
-    //no me esta agregando la clase
+    
     let li = document.createElement("li");
     li.classList.add("menuItem");
     li.id=product.name;
@@ -31,7 +31,7 @@ const showProductList = event => {
     let cantSpan=document.createElement("span");
     let input = document.createElement("input");
     input.type="text";
-    //no me esta agregando la clase
+    
     input.classList.add("cantProd");
     cantSpan.appendChild(input);
     li.appendChild(cantSpan);

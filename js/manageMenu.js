@@ -32,7 +32,7 @@ const newProduct = event => {
     li.appendChild(prodNameSpan);
 
     let priceSpan = document.createElement("span");
-    priceSpan.innerHTML=product.price;
+    priceSpan.innerHTML= `$${product.price}` 
     li.appendChild(priceSpan);
 
     let deleteButtonSpan = document.createElement("span");
