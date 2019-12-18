@@ -14,7 +14,7 @@ class TableProduct {
                     this.product=item;
                 }
             }
-        this.cant=cant;
+        this.cant=parseInt(cant);
     }
 }
 

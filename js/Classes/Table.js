@@ -24,6 +24,7 @@ class Table  {
     }
 
     addProduct(producto,cant) {
+        let cantidad = parseInt(cant);
         let index = this.products.findIndex((item)=>{
             return item.product.name == producto;
         });
@@ -32,7 +33,8 @@ class Table  {
             let productTable=new TableProduct(producto, cant)
             this.products.push(productTable)
         } else {
-        this.products[index].cant += cant;
+            
+        this.products[index].cant += cantidad;
         }
     }
     
