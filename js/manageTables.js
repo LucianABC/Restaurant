@@ -42,7 +42,49 @@ const newTable = event => {
     closeButton.id="closeButton";
     closeButton.innerHTML="Cerrar";
     closeButton.addEventListener("click", ()=>{
-        checkSpan.innerHTML=table.check;
+        let close = document.querySelector(".close");
+        close.onclick = function() {
+          modal.style.display = "none";
+        }
+
+        let modal = document.querySelector("#ticketModal");
+        let ul = document.querySelector("#modalUl");
+        let ticket = document.querySelector("#ticket");
+        let tableProductList = table.products;
+
+        for (let item of tableProductList) {
+            let li = document.createElement("li");
+            
+            let spanName = document.createElement("span");
+            
+            spanName.innerHTML= item.product.name;
+            li.appendChild(spanName);
+
+            let spanQuant = document.createElement("span");
+            spanQuant.innerHTML = item.cant;
+            li.appendChild(spanQuant);
+
+            let spanPrice = document.createElement("span");
+            spanPrice.innerHTML=(item.product.price * item.cant);
+            li.appendChild(spanPrice);
+
+            ul.appendChild(li);
+            }
+        let div = document.createElement("div");
+        div.style.display="flex"
+        let span = document.createElement("span");
+        let h3 = document.createElement("h3");
+        h3.innerHTML="TOTAL:"
+        span.appendChild(h3);
+        div.appendChild(span);
+        let spanTotal = document.createElement("span");
+        let totalH3=document.createElement("h3");
+        totalH3.innerHTML = table.check;
+        spanTotal.appendChild(totalH3);
+        div.appendChild(spanTotal);
+        ticket.appendChild(div);
+
+        modal.style.display= "block";
     });
     closeSpan.appendChild(closeButton);
     li.appendChild(closeSpan);
@@ -83,12 +125,13 @@ const newTable = event => {
 
 };
 
-
-
 const addTableButton = document.querySelector("#addTableButton");
 addTableButton.onclick=newTable;
 
+const showTicket = event => {
+    let modal = document.querySelector("#ticketModal");
 
+}
 
 
 
