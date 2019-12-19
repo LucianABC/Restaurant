@@ -42,10 +42,7 @@ const newTable = event => {
     closeButton.id="closeButton";
     closeButton.innerHTML="Cerrar";
     closeButton.addEventListener("click", ()=>{
-        let close = document.querySelector(".close");
-        close.onclick = function() {
-          modal.style.display = "none";
-        }
+
         
         let modal = document.querySelector("#ticketModal");
         let ul = document.querySelector("#modalUl");
@@ -90,6 +87,14 @@ const newTable = event => {
         ticket.appendChild(div);
 
         modal.style.display= "block";
+
+        let close = document.querySelector(".close");
+        close.onclick = function() {
+          modal.style.display = "none";
+          ul.innerHTML="";
+          mesaH4.parentNode.removeChild(mesaH4);
+          div.parentNode.removeChild(div);
+        }
     });
     closeSpan.appendChild(closeButton);
     li.appendChild(closeSpan);
@@ -133,10 +138,7 @@ const newTable = event => {
 const addTableButton = document.querySelector("#addTableButton");
 addTableButton.onclick=newTable;
 
-const showTicket = event => {
-    let modal = document.querySelector("#ticketModal");
 
-}
 
 
 
