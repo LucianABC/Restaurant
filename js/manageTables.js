@@ -42,8 +42,6 @@ const newTable = event => {
     closeButton.id="closeButton";
     closeButton.innerHTML="Cerrar";
     closeButton.addEventListener("click", ()=>{
-
-        
         let modal = document.querySelector("#ticketModal");
         let ul = document.querySelector("#modalUl");
         let ticket = document.querySelector("#ticket");
@@ -86,6 +84,7 @@ const newTable = event => {
         div.appendChild(spanTotal);
         ticket.appendChild(div);
 
+        checkSpan.innerHTML = table.check;
         modal.style.display= "block";
 
         let close = document.querySelector(".close");
