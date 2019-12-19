@@ -46,11 +46,16 @@ const newTable = event => {
         close.onclick = function() {
           modal.style.display = "none";
         }
-
+        
         let modal = document.querySelector("#ticketModal");
         let ul = document.querySelector("#modalUl");
         let ticket = document.querySelector("#ticket");
         let tableProductList = table.products;
+        let mesaH4 = document.createElement("h4");
+        mesaH4.innerHTML = `Mesa ${table.num}`;
+
+        let header = document.querySelector("#modalHeader");
+        header.appendChild(mesaH4);
 
         for (let item of tableProductList) {
             let li = document.createElement("li");
