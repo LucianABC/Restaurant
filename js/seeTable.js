@@ -53,7 +53,7 @@ const seeTableProducts = event => {
             deleteProd.addEventListener("click", ()=>{
                 let li = spanDelete.parentElement;
                 li.parentNode.removeChild(li);
-                table.deleteProduct(spanName.innerHTML);
+                table.deleteProduct(spanName.innerHTML, item.cant);
 
             });
             spanDelete.appendChild(deleteProd);
