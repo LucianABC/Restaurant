@@ -83,6 +83,11 @@ const newTable = event => {
         spanTotal.appendChild(totalH3);
         div.appendChild(spanTotal);
         ticket.appendChild(div);
+        
+        let printButton = document.createElement("button");
+        printButton.innerHTML="Imprimir";
+       
+        ticket.appendChild(printButton)
 
         checkSpan.innerHTML = table.check;
         modal.style.display= "block";
