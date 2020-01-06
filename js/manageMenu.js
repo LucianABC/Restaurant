@@ -1,13 +1,15 @@
-try {
+ 
+ try {
     const jsAddToTable = require('./addToTable.js')
-    const jsProducto = require('./Classes/Product.js'); 
-    const jsTable = require('./Classes/Table.js'); 
-    const jsCheck = require('./Classes/TableProduct.js'); 
-    const jsCarta = require('./Classes/Carta.js');
+    const jsProducto = require('./Classes&Objects/Product.js'); 
+    const jsTable = require('./Classes&Objects/Table.js');
+    const jsCheck = require('./Classes&Objects/TableProduct.js'); 
+    const jsCarta = require('./Classes&Objects/Carta.js');
     const Check = jsCheck.Check;
     const Product = jsProducto.Product;
     const Table = jsTable.Table;
     const carta = jsCarta.carta;
+    const TableProduct= jsTableProduct.TableProduct;
     const addToTable = jsAddToTable.showProductList;
     const showMenu = jsAddToTable.showMenu;
  } catch (e) {}

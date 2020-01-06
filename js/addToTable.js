@@ -1,16 +1,14 @@
-try {
-    const jsManageTables = require('./manageTables.js')
-    const jsProducto = require('./Classes/Product.js'); 
-    const jsTable = require('./Classes/Table.js'); 
-    const jsTableProduct = require('./Classes/TableProduct.js'); 
-    const jsCarta = require('./Classes/Carta.js');
-    const TableProduct= jsTableProduct.TableProduct;
+ try {
+    const jsProducto = require('./Classes&Objects/Product.js'); 
+    const jsTable = require('./Classes&Objects/Table.js');
+    const jsTableProduct = require('./Classes&Objects/TableProduct.js');
+    const jsCarta = require('./Classes&Objects/Carta.js');
+    const jsRestaurant = require('./Classes&Objects/Restaurant.js')
     const Product = jsProducto.Product;
     const Table = jsTable.Table;
     const carta = jsCarta.carta;
-    const restaurant = jsManageTables.restaurant;
-    
-    
+    const restaurant = jsRestaurant.restaurant;
+    const tableProduct= jsTableProduct.TableProduct;
  } catch (e) {}
  const showMenu = document.querySelector("#addToMenuButton");
 

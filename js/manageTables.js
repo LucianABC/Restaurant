@@ -1,18 +1,17 @@
 try {
     
-    const jsProducto = require('./Classes/Product.js'); 
-    const jsTable = require('./Classes/Table.js'); 
-    const jsCheck = require('./Classes/TableProduct.js'); 
-    const jsCarta = require('./Classes/Carta.js');
+    const jsProducto = require('./Classes&Objects/Product.js'); 
+    const jsTable = require('./Classes&Objects/Table.js'); 
+    const jsCheck = require('./Classes&Objects/TableProduct.js'); 
+    const jsCarta = require('./Classes&Objects/Carta.js');
+    const jsRestaurant = require('./Classes&Objects/Restaurant.js')
     const Check = jsCheck.Check;
     const Product = jsProducto.Product;
     const Table = jsTable.Table;
     const carta = jsCarta.carta;
+    const restaurant = jsRestaurant.restaurant;
  } catch (e) {}
 
-const restaurant = {
-
-}; 
 
 const tableList = document.querySelector("#tablesList");
 const addTableNum = document.querySelector("#tableName");
@@ -111,7 +110,6 @@ const addTableToTableList = (table) => {
     tableList.appendChild(li);
 };
 
-
 const addTableToSelect = (tableNumber) => {
     let selectMenu = document.querySelector("#selectTable");
     let tableOption = document.createElement("option");
@@ -128,7 +126,6 @@ const addTableToSelect = (tableNumber) => {
     selectAddProdsPerTable.appendChild(tableOption);
 };
 
-
 const newTable = event => {
     let tableNum = addTableNum.value;
     const table = new Table(tableNum);
@@ -142,11 +139,3 @@ const addTableButton = document.querySelector("#addTableButton");
 addTableButton.onclick=newTable;
 
 
-
-
-
-try {
-    module.exports = {
-        restaurant
-    }
- } catch (e) {}
