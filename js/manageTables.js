@@ -63,9 +63,11 @@ const createTicket = (table) => {
     div.appendChild(spanTotal);
     ticket.appendChild(div);
     
-    let printButton = document.createElement("button");
+    const printButton = document.createElement("button");
     printButton.innerHTML="Imprimir";
-   
+    printButton.addEventListener("click", () => {
+        print();
+    });
     ticket.appendChild(printButton)
 
     let checkSpan = document.querySelector(`#table${table.num}-checkSpan`);
