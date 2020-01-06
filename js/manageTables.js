@@ -12,7 +12,7 @@ try {
 
 const restaurant = {
 
-}; //ponerlo en un archivo aparte?
+}; 
 
 const tableList = document.querySelector("#tablesList");
 const addTableNum = document.querySelector("#tableName");
@@ -21,13 +21,25 @@ const createTicket = (table) => {
     let modal = document.querySelector("#ticketModal");
     modal.style.display= "block";
     
+    let close = document.querySelector("#closeTicket");
+    close.onclick = function() {
+      modal.style.display = "none";
+      ul.innerHTML="";
+      mesaH4.parentNode.removeChild(mesaH4);
+    }
+
+    const printButton = document.querySelector("#printButton");
+    printButton.addEventListener("click", () => {
+        print();
+    });
+
     let ul = document.querySelector("#modalUl");
     let ticket = document.querySelector("#ticket");
     let tableProductList = table.products;
     let mesaH4 = document.createElement("h4");
     mesaH4.innerHTML = `Mesa ${table.num}`;
 
-    let header = document.querySelector("#modalHeader");
+    const header = document.querySelector("#modalHeader");
     header.appendChild(mesaH4);
 
     for (let item of tableProductList) {
@@ -47,28 +59,13 @@ const createTicket = (table) => {
         ul.appendChild(li);
     }
     const totalH3 = document.querySelector("#ticketTotal");
-    totalH3.innerHTML = table.check; 
-    
-    const printButton = document.querySelector("#printButton");
-    printButton.addEventListener("click", () => {
-        print();
-    });
+    totalH3.innerHTML = table.check;
 
     let checkSpan = document.querySelector(`#table${table.num}-checkSpan`);
     checkSpan.innerHTML = table.check;
-    
-
-    let close = document.querySelector(".close");
-    close.onclick = function() {
-      modal.style.display = "none";
-      ul.innerHTML="";
-      mesaH4.parentNode.removeChild(mesaH4);
-      div.parentNode.removeChild(div);
-    }
 };
 
 const addTableToTableList = (table) => {
-    
     let li = document.createElement("li");
     li.classList.add("table");
 
@@ -112,7 +109,6 @@ const addTableToTableList = (table) => {
     li.appendChild(deleteSpan);
 
     tableList.appendChild(li);
-
 };
 
 
@@ -132,6 +128,7 @@ const addTableToSelect = (tableNumber) => {
     selectAddProdsPerTable.appendChild(tableOption);
 };
 
+
 const newTable = event => {
     let tableNum = addTableNum.value;
     const table = new Table(tableNum);
@@ -139,8 +136,6 @@ const newTable = event => {
     
     addTableToTableList(table);
     addTableToSelect(tableNum);
-    
-
 };
 
 const addTableButton = document.querySelector("#addTableButton");
