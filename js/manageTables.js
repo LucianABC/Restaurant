@@ -80,20 +80,13 @@ const createTicket = (table) => {
       ul.innerHTML="";
       mesaH4.parentNode.removeChild(mesaH4);
       div.parentNode.removeChild(div);
-
-
     }
 };
 
-const newTable = event => {
+const addTableToTableList = (table) => {
     
     let li = document.createElement("li");
     li.classList.add("table");
-
-    let tableNum = addTableNum.value;
-    
-    const table = new Table(tableNum);
-    restaurant[tableNum] = table;
 
     let tableNumSpan = document.createElement("span");
     tableNumSpan.innerHTML=table.num;
@@ -104,19 +97,15 @@ const newTable = event => {
     let ticket = table.check;
     checkSpan.innerHTML= ticket;
     li.appendChild(checkSpan);
-    //------------------Ticket
+
     let closeSpan = document.createElement("span");
     let closeButton = document.createElement("button");
     closeButton.type="button";
     closeButton.id="closeButton";
     closeButton.innerHTML="Cerrar";
     closeButton.addEventListener("click", ()=>{
-        //quisiera poner esto en un archivo aparte, o fuera de todo este choclo
-        //pero me empieza a generar problemas el orden en el qe se declaran las cosas
-        //al usar variables que estan dentro de todo el choclo entonces :V
         createTicket(table);
     });
-    //-----------End ticket
     closeSpan.appendChild(closeButton);
     li.appendChild(closeSpan);
 
@@ -140,6 +129,16 @@ const newTable = event => {
 
     tableList.appendChild(li);
 
+};
+
+
+const newTable = event => {
+    let tableNum = addTableNum.value;
+    const table = new Table(tableNum);
+    restaurant[tableNum] = table;
+    
+    addTableToTableList(table);
+    
     let selectMenu = document.querySelector("#selectTable");
     let tableOption = document.createElement("option");
     tableOption.value=tableNum;
