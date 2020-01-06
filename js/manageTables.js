@@ -35,13 +35,17 @@ const newTable = event => {
     let ticket = table.check;
     checkSpan.innerHTML= ticket;
     li.appendChild(checkSpan);
-
+    //------------------Ticket
     let closeSpan = document.createElement("span");
     let closeButton = document.createElement("button");
     closeButton.type="button";
     closeButton.id="closeButton";
     closeButton.innerHTML="Cerrar";
     closeButton.addEventListener("click", ()=>{
+        //quisiera poner esto en un archivo aparte, o fuera de todo este choclo
+        //pero me empieza a generar problemas el orden en el qe se declaran las cosas
+        //al usar variables que estan dentro de todo el choclo entonces :V
+
         let modal = document.querySelector("#ticketModal");
         let ul = document.querySelector("#modalUl");
         let ticket = document.querySelector("#ticket");
@@ -69,7 +73,7 @@ const newTable = event => {
             li.appendChild(spanPrice);
 
             ul.appendChild(li);
-            }
+        }
         let div = document.createElement("div");
         div.style.display="flex"
         let span = document.createElement("span");
@@ -100,6 +104,7 @@ const newTable = event => {
           div.parentNode.removeChild(div);
         }
     });
+    //-----------End ticket
     closeSpan.appendChild(closeButton);
     li.appendChild(closeSpan);
 

@@ -27,7 +27,7 @@ navTables.addEventListener("click", ()=>{
     tablesCard.classList.remove("hide");
 });
 
-navAddTableProd .addEventListener("click", ()=>{
+navAddTableProd.addEventListener("click", ()=>{
     navButtons.forEach((button)=>{
         button.classList.remove("active");
     })

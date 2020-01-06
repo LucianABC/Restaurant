@@ -17,11 +17,11 @@ const selectProdsPerTable = document.querySelector("#selectProdsPerTable");
 const seeTableProducts = event => {
     const ul = document.querySelector("#prodsPerTableList");
     ul.innerHTML=`<header>
-    <span>Producto</span>
-    <span>Cantidad</span>
-    <span>Precio</span>
-    <span>Eliminar</span>
-</header>`;
+        <span>Producto</span>
+        <span>Cantidad</span>
+        <span>Precio</span>
+        <span>Eliminar</span>
+    </header>`;
 
     if (selectProdsPerTable.value != -1) {
         let tableNumber = selectProdsPerTable.value;

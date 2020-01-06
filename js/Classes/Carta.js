@@ -1,8 +1,6 @@
 try {
-
     const jsProducto =require('./Product.js'); 
     const Product = jsProducto.Product;
-
 } catch (e) {}
 
 
@@ -10,7 +8,6 @@ try {
 //lista de productos 
 const carta = { 
      menu: [],
- 
 
     deleteProduct(name){
         let index = this.menu.findIndex((producto)=>{
@@ -49,6 +46,5 @@ const carta = {
 try {
     module.exports = {
         carta
-
     }
  } catch (e) {}
