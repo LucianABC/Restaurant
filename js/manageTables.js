@@ -132,13 +132,7 @@ const addTableToTableList = (table) => {
 };
 
 
-const newTable = event => {
-    let tableNum = addTableNum.value;
-    const table = new Table(tableNum);
-    restaurant[tableNum] = table;
-    
-    addTableToTableList(table);
-    
+const addTableToSelect = (tableNumber) => {
     let selectMenu = document.querySelector("#selectTable");
     let tableOption = document.createElement("option");
     tableOption.value=tableNum;
@@ -152,6 +146,16 @@ const newTable = event => {
     tableOption.id=`option${tableNum}`
     tableOption.innerHTML=tableNum;
     selectAddProdsPerTable.appendChild(tableOption);
+};
+
+const newTable = event => {
+    let tableNum = addTableNum.value;
+    const table = new Table(tableNum);
+    restaurant[tableNum] = table;
+    
+    addTableToTableList(table);
+    addTableToSelect(tableNum);
+    
 
 };
 
