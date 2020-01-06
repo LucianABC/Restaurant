@@ -17,11 +17,10 @@ const restaurant = {
 const tableList = document.querySelector("#tablesList");
 const addTableNum = document.querySelector("#tableName");
 
-
-
 const createTicket = (table) => {
-    
     let modal = document.querySelector("#ticketModal");
+    modal.style.display= "block";
+    
     let ul = document.querySelector("#modalUl");
     let ticket = document.querySelector("#ticket");
     let tableProductList = table.products;
@@ -33,9 +32,7 @@ const createTicket = (table) => {
 
     for (let item of tableProductList) {
         let li = document.createElement("li");
-        
         let spanName = document.createElement("span");
-        
         spanName.innerHTML= item.product.name;
         li.appendChild(spanName);
 
@@ -49,30 +46,17 @@ const createTicket = (table) => {
 
         ul.appendChild(li);
     }
-    let div = document.createElement("div");
-    div.style.display="flex"
-    let span = document.createElement("span");
-    let h3 = document.createElement("h3");
-    h3.innerHTML="TOTAL:"
-    span.appendChild(h3);
-    div.appendChild(span);
-    let spanTotal = document.createElement("span");
-    let totalH3=document.createElement("h3");
-    totalH3.innerHTML = table.check;
-    spanTotal.appendChild(totalH3);
-    div.appendChild(spanTotal);
-    ticket.appendChild(div);
+    const totalH3 = document.querySelector("#ticketTotal");
+    totalH3.innerHTML = table.check; 
     
-    const printButton = document.createElement("button");
-    printButton.innerHTML="Imprimir";
+    const printButton = document.querySelector("#printButton");
     printButton.addEventListener("click", () => {
         print();
     });
-    ticket.appendChild(printButton)
 
     let checkSpan = document.querySelector(`#table${table.num}-checkSpan`);
     checkSpan.innerHTML = table.check;
-    modal.style.display= "block";
+    
 
     let close = document.querySelector(".close");
     close.onclick = function() {
@@ -135,16 +119,16 @@ const addTableToTableList = (table) => {
 const addTableToSelect = (tableNumber) => {
     let selectMenu = document.querySelector("#selectTable");
     let tableOption = document.createElement("option");
-    tableOption.value=tableNum;
-    tableOption.id=`option${tableNum}`
-    tableOption.innerHTML=tableNum;
+    tableOption.value=tableNumber;
+    tableOption.id=`option${tableNumber}`
+    tableOption.innerHTML=tableNumber;
     selectMenu.appendChild(tableOption);
 
     let selectAddProdsPerTable = document.querySelector("#selectProdsPerTable");
     tableOption = document.createElement("option");
-    tableOption.value=tableNum;
-    tableOption.id=`option${tableNum}`
-    tableOption.innerHTML=tableNum;
+    tableOption.value=tableNumber;
+    tableOption.id=`option${tableNumber}`
+    tableOption.innerHTML=tableNumber;
     selectAddProdsPerTable.appendChild(tableOption);
 };
 
