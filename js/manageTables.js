@@ -12,10 +12,76 @@ try {
 
 const restaurant = {
 
-};
+}; //ponerlo en un archivo aparte?
 
 const tableList = document.querySelector("#tablesList");
 const addTableNum = document.querySelector("#tableName");
+
+
+
+const createTicket = (table) => {
+    
+    let modal = document.querySelector("#ticketModal");
+    let ul = document.querySelector("#modalUl");
+    let ticket = document.querySelector("#ticket");
+    let tableProductList = table.products;
+    let mesaH4 = document.createElement("h4");
+    mesaH4.innerHTML = `Mesa ${table.num}`;
+
+    let header = document.querySelector("#modalHeader");
+    header.appendChild(mesaH4);
+
+    for (let item of tableProductList) {
+        let li = document.createElement("li");
+        
+        let spanName = document.createElement("span");
+        
+        spanName.innerHTML= item.product.name;
+        li.appendChild(spanName);
+
+        let spanQuant = document.createElement("span");
+        spanQuant.innerHTML = item.cant;
+        li.appendChild(spanQuant);
+
+        let spanPrice = document.createElement("span");
+        spanPrice.innerHTML=(item.product.price * item.cant);
+        li.appendChild(spanPrice);
+
+        ul.appendChild(li);
+    }
+    let div = document.createElement("div");
+    div.style.display="flex"
+    let span = document.createElement("span");
+    let h3 = document.createElement("h3");
+    h3.innerHTML="TOTAL:"
+    span.appendChild(h3);
+    div.appendChild(span);
+    let spanTotal = document.createElement("span");
+    let totalH3=document.createElement("h3");
+    totalH3.innerHTML = table.check;
+    spanTotal.appendChild(totalH3);
+    div.appendChild(spanTotal);
+    ticket.appendChild(div);
+    
+    let printButton = document.createElement("button");
+    printButton.innerHTML="Imprimir";
+   
+    ticket.appendChild(printButton)
+
+    let checkSpan = document.querySelector(`#table${table.num}-checkSpan`);
+    checkSpan.innerHTML = table.check;
+    modal.style.display= "block";
+
+    let close = document.querySelector(".close");
+    close.onclick = function() {
+      modal.style.display = "none";
+      ul.innerHTML="";
+      mesaH4.parentNode.removeChild(mesaH4);
+      div.parentNode.removeChild(div);
+
+
+    }
+};
 
 const newTable = event => {
     
@@ -32,6 +98,7 @@ const newTable = event => {
     li.appendChild(tableNumSpan);
 
     let checkSpan = document.createElement("span");
+    checkSpan.id=`table${table.num}-checkSpan`;
     let ticket = table.check;
     checkSpan.innerHTML= ticket;
     li.appendChild(checkSpan);
@@ -45,64 +112,7 @@ const newTable = event => {
         //quisiera poner esto en un archivo aparte, o fuera de todo este choclo
         //pero me empieza a generar problemas el orden en el qe se declaran las cosas
         //al usar variables que estan dentro de todo el choclo entonces :V
-
-        let modal = document.querySelector("#ticketModal");
-        let ul = document.querySelector("#modalUl");
-        let ticket = document.querySelector("#ticket");
-        let tableProductList = table.products;
-        let mesaH4 = document.createElement("h4");
-        mesaH4.innerHTML = `Mesa ${table.num}`;
-
-        let header = document.querySelector("#modalHeader");
-        header.appendChild(mesaH4);
-
-        for (let item of tableProductList) {
-            let li = document.createElement("li");
-            
-            let spanName = document.createElement("span");
-            
-            spanName.innerHTML= item.product.name;
-            li.appendChild(spanName);
-
-            let spanQuant = document.createElement("span");
-            spanQuant.innerHTML = item.cant;
-            li.appendChild(spanQuant);
-
-            let spanPrice = document.createElement("span");
-            spanPrice.innerHTML=(item.product.price * item.cant);
-            li.appendChild(spanPrice);
-
-            ul.appendChild(li);
-        }
-        let div = document.createElement("div");
-        div.style.display="flex"
-        let span = document.createElement("span");
-        let h3 = document.createElement("h3");
-        h3.innerHTML="TOTAL:"
-        span.appendChild(h3);
-        div.appendChild(span);
-        let spanTotal = document.createElement("span");
-        let totalH3=document.createElement("h3");
-        totalH3.innerHTML = table.check;
-        spanTotal.appendChild(totalH3);
-        div.appendChild(spanTotal);
-        ticket.appendChild(div);
-        
-        let printButton = document.createElement("button");
-        printButton.innerHTML="Imprimir";
-       
-        ticket.appendChild(printButton)
-
-        checkSpan.innerHTML = table.check;
-        modal.style.display= "block";
-
-        let close = document.querySelector(".close");
-        close.onclick = function() {
-          modal.style.display = "none";
-          ul.innerHTML="";
-          mesaH4.parentNode.removeChild(mesaH4);
-          div.parentNode.removeChild(div);
-        }
+        createTicket(table);
     });
     //-----------End ticket
     closeSpan.appendChild(closeButton);
