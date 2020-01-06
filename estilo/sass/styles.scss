@@ -1,6 +1,5 @@
 html {
     height: 100%;
-    
 }
 body {
     font-family: Verdana, Tahoma, sans-serif;
@@ -8,37 +7,30 @@ body {
     height: 100%;
     margin: 0;
     padding: 15px;
-   
 }
 .column {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 .all {
     width:100%;
     box-sizing: border-box;
     justify-content: center;
 }
-
 .cardsContainer {
     width:50%;
     box-sizing: border-box;
     background-color: #0db3bf;
     border-radius: 10px;
     border: 1px solid #8f8f8f;
-
 }
-
 .cardNav {
     color: white;
     display: flex;
     box-sizing: border-box;
     justify-content: center;
     border-bottom: 1px solid #8f8f8f;
-
-
     span{
         padding: 10px;
         font-size: 14px;
@@ -46,7 +38,6 @@ body {
         width: 25%;
         text-align: center;
         background: #0db3bf;
-        
         &:first-child{
           border-top-left-radius: 10px; 
         }
@@ -55,21 +46,14 @@ body {
             border-top-right-radius: 10px;
         }
     }
-
-        
     .active {
         background:#068396;
         box-shadow: inset 0px 0px 8px 2px rgba(1,109,125,1);
-
-
-        
     }
 }
-
 .hide{
     display: none;
 }
-
 .card {
     
     border-bottom-left-radius: 10px;
@@ -78,9 +62,7 @@ body {
     width:100%;
     box-sizing: border-box;
     background-color: white;
-    box-shadow: 1px 3px 57px -6px rgba(173,171,173,0.78);;
-   
-    
+    box-shadow: 1px 3px 57px -6px rgba(173,171,173,0.78);;  
     .mainButton {
         color: white;
         background-color:#0dbfad;
@@ -106,7 +88,6 @@ body {
             text-align: center;
             width:25%;
             margin:0;
-
         }
         li {
             box-sizing: border-box;
@@ -116,7 +97,6 @@ body {
             font-size: 12px;
             align-items: center;
             border-top: 1px solid  #c9c9c9;
-
             input {
                 height: 25px;
                 width: 80px;
@@ -130,7 +110,6 @@ body {
             font-size: 13px;
             font-weight: 600;
             border-bottom: 1px solid #c9c9c9 ;
-            
         }
     }
     #tableProductsList {
@@ -139,19 +118,15 @@ body {
         }
     }
 }
-
 select {
     height: 35px;
     border: 1px solid  #8f8f8f;
     margin: 3px;
     padding: 3px;
 }
-
 .selectContainer {
     width: 100%;
-
 }
-
 #ticketModal {
     display: none;
     position: fixed; 
@@ -169,7 +144,6 @@ select {
         border: 1px solid #8f8f8f;
         width: 50%; 
         text-align: center;
-
         #closeTicket {
             color: #252525;
             float: right;
@@ -177,7 +151,6 @@ select {
                 color: #8f8f8f
             }
         }
-
         header {
             border-bottom:1px solid #8f8f8f;
         }
@@ -195,7 +168,6 @@ select {
                 width:33%;
                 margin:0;
             }
-    
             li {
                 box-sizing: border-box;
                 padding: 4px;
@@ -203,10 +175,8 @@ select {
                 width: 100%;
                 font-size: 12px;
                 align-items: center;
-        
             }
         }
-
         div {
             display: flex;
             span {
@@ -214,6 +184,5 @@ select {
             }
         }
     }
-  
 }
 
