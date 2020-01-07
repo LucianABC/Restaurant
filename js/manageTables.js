@@ -97,10 +97,10 @@ const addTableToTableList = (table) => {
     deleteButton.addEventListener("click", ()=>{
         let li = deleteSpan.parentElement;
         li.parentNode.removeChild(li);
-        let option = document.querySelector(`#selectTable > #option${tableNum}`);
+        let option = document.querySelector(`#selectTable > #option${table.num}`);
         option.parentNode.removeChild(option);
 
-        option= document.querySelector(`#selectProdsPerTable > #option${tableNum}`);
+        option= document.querySelector(`#selectProdsPerTable > #option${table.num}`);
         option.parentNode.removeChild(option);
 
     });
