@@ -9,8 +9,7 @@
     const carta = jsCarta.carta;
     const restaurant = jsRestaurant.restaurant;
     const tableProduct= jsTableProduct.TableProduct;
- } catch (e) {}
- const showMenu = document.querySelector("#addToMenuButton");
+} catch (e) {}
 
 
 const showProductList = event => {

@@ -10,11 +10,11 @@
     const Table = jsTable.Table;
     const carta = jsCarta.carta;
     const TableProduct= jsTableProduct.TableProduct;
-    const addToTable = jsAddToTable.showProductList;
-    const showMenu = jsAddToTable.showMenu;
+    const showProductList = jsAddToTable.showProductList;
  } catch (e) {}
 
-const addToMenuButton = document.querySelector("#addToMenuButton")
+const addToMenuButton = document.querySelector("#addToMenuButton");
+
 const newProduct = event => {
     let name = document.querySelector("#productName");
     name = name.value;
@@ -46,7 +46,6 @@ const newProduct = event => {
         let li = deleteButtonSpan.parentElement;
         li.parentNode.removeChild(li)
         carta.deleteProduct(product.name);
-
         li = document.querySelector(`#${product.name}`);
         li.parentNode.removeChild(li)
     });
@@ -54,12 +53,13 @@ const newProduct = event => {
     li.appendChild(deleteButtonSpan);
 
     ul.appendChild(li);
-    
+
+    showProductList();
 }
 
 
 addToMenuButton.onclick=newProduct;
-showMenu.addEventListener("click", showProductList);
+
 
 
 
