@@ -1,6 +1,5 @@
  
  try {
-    const jsAddToTable = require('./addToTable.js')
     const jsProducto = require('./Classes&Objects/Product.js'); 
     const jsTable = require('./Classes&Objects/Table.js');
     const jsCheck = require('./Classes&Objects/TableProduct.js'); 
@@ -10,18 +9,11 @@
     const Table = jsTable.Table;
     const carta = jsCarta.carta;
     const TableProduct= jsTableProduct.TableProduct;
-    const showProductList = jsAddToTable.showProductList;
  } catch (e) {}
 
 const addToMenuButton = document.querySelector("#addToMenuButton");
 
-const newProduct = event => {
-    let name = document.querySelector("#productName");
-    name = name.value;
-    let price = document.querySelector("#productPrice");
-    price= price.value;
-    const product = carta.addProduct(name,price);
-
+const addToProductList = (product) => { 
     let ul = document.querySelector("#menu");
     let li = document.createElement("li");
     
@@ -53,8 +45,19 @@ const newProduct = event => {
     li.appendChild(deleteButtonSpan);
 
     ul.appendChild(li);
+};
 
-    showProductList();
+const newProduct = event => {
+    let nameInput = document.querySelector("#productName");
+    let name = nameInput.value;
+    let priceInput = document.querySelector("#productPrice");
+    let price= priceInput.value;
+    const product = carta.addProduct(name,price);
+
+    addToProductList(product);
+    seeMenu();
+    nameInput.value = "";
+    priceInput.value="";
 }
 
 

@@ -12,7 +12,7 @@
 } catch (e) {}
 
 
-const showProductList = event => {
+const seeMenu = event => {
     let index = carta.menu.length -1;
     let product = carta.menu[index];
 
@@ -28,38 +28,37 @@ const showProductList = event => {
     let cantSpan=document.createElement("span");
     let input = document.createElement("input");
     input.type="text";
+    input.value=0;
     
     input.classList.add("cantProd");
     cantSpan.appendChild(input);
     li.appendChild(cantSpan);
 
     ul.appendChild(li);
-}
-
-const addToTableButton = document.querySelector("#addToTableButton");
+};
 
 const addToTable = event => {
     let products = document.querySelectorAll(".menuItem");
+    let tableSelect = document.querySelector("#selectTable");
+    let table= restaurant[tableSelect.value];
+
     for (let menuItem of products){
         let spans = menuItem.children;
-                let product = spans[0].innerHTML;
+        let product = spans[0].innerHTML;
         let cant = spans[1].children;
-        cant = cant[0].value;
-        
-        let tableNum = document.querySelector("#selectTable");
-        tableNum =tableNum.value;
-
-        let table= restaurant[tableNum];
-        table.addProduct(product,cant);
+        cant = cant[0];
+        table.addProduct(product,cant.value);
+        cant.value=0;
     }
+    tableSelect.value=-1;
 };
 
+const addToTableButton = document.querySelector("#addToTableButton");
 addToTableButton.onclick=addToTable;
 
 
 try {
     module.exports = {
-        showProductList,
-        showMenu
+        seeMenu,
     }
  } catch (e) {}

@@ -133,6 +133,8 @@ const newTable = event => {
     
     addTableToTableList(table);
     addTableToSelect(tableNum);
+
+    addTableNum.value="";
 };
 
 const addTableButton = document.querySelector("#addTableButton");
